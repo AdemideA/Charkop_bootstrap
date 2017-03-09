@@ -1,6 +1,6 @@
 //Instantiate map
 
-var map = L.map('mapContainer').setView([19.2150, 72.8245], 15);
+var map = L.map('mapContainer').setView([19.2150, 72.8245], 14);
 
 //map from mabbox
 L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYWRlbWlkZWEiLCJhIjoiY2l6ZGJueHpzMXV0MDJxcW9qYjc2ZnYzYyJ9.3ulYJ3UmEqZn7HHyX-vs7g', {
@@ -59,9 +59,10 @@ $.getJSON("data/data.geojson", function(data) {
 		onEachFeature: function (feature, layer) {
 			layer.on('click', function(){
 				$('#sidebar h2').text(feature.properties.Sector);
-				$('#sidebar h3').text(feature.properties.Observations)	
+				$('#sidebar h3').text(feature.properties.Observations);
+				map.flyTo(feature.geometry.coordinates, 13)	
 			})
-		}		
+		}			
 	
 	}
 	

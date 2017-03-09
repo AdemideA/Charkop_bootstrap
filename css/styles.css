@@ -10,7 +10,7 @@
   padding: 15px;
   background: #b2b2b2;
   width: 50%;
-  height: 470px;
+  height: 500px;
 }
 
 .header p { 
@@ -33,3 +33,6 @@
           font-size: 12pt;
           ;
         }
+h1, h2, h3 {
+  font-family: 'Open Sans Condensed', sans-serif;
+}
